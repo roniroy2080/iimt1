@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const server = require('http').createServer(app);
-const io = require('socket.io')(server)
+const io = require('socket.io')(server,{
+    cors : "https://iimt-vqfq.onrender.com"
+})
 app.use(cors())
 const PORT = 6500
 server.listen(PORT,()=> console.log(`We Are Live At PORT : ${PORT}`))
@@ -87,4 +89,5 @@ io.on('connection', socket =>{
     })
 
     socket.on('disconnect', ()=> console.log('a user disconnected'))
+
 })
