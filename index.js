@@ -13,7 +13,7 @@ app.use('/frontend',express.static('./public'))
 
 app.get('/',(req,res)=>{
     res.json({
-        name:'webcalling server',
+        name:'webcalling server running',
         password:'test'
     })
 })
@@ -91,3 +91,4 @@ io.on('connection', socket =>{
     socket.on('disconnect', ()=> console.log('a user disconnected'))
 
 })
+
